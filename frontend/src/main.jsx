@@ -1,11 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
 import { ThemeProvider } from './components/theme-provider.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import { HomePage } from './pages/Home.jsx'
+import { HomePage } from './pages/home/Home.jsx'
 import NotFoundPageError from './pages/components/Exceptions/NotFoundPageError.jsx'
+import { FormPage } from './pages/formPage/FormPage.jsx'
+import App from './App'
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/form",
+    element: <FormPage />,
+  }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
