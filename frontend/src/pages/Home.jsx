@@ -69,6 +69,7 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/components/ui/tabs"
+import { ModeToggle } from "@/components/mode-toggle"
 
 // import { Link } from "react-router-dom"
 
@@ -84,7 +85,7 @@ export function HomePage() {
                         <Package2 className="h-4 w-4 transition-all group-hover:scale-110" />
                         <span className="sr-only">Acme Inc</span>
                     </a>
-                   
+                    <ModeToggle />
                 </nav>
             </aside>
             <div className="flex flex-col sm:gap-4 sm:py-4 sm:pl-14">
