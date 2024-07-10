@@ -1,0 +1,85 @@
+[2024-07-09 20:31:19,035] ERROR Exception on /ticket [GET] - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py L838 
+Traceback (most recent call last):
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask_openapi3\scaffold.py", line 117, in view_func
+    response = func(**func_kwargs)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\app.py", line 95, in get_ticket
+    logger.info(f"Coletando dados sobre ticekt #{ticekt_id}")
+                                                 ^^^^^^^^^
+NameError: name 'ticekt_id' is not defined
+[2024-07-09 20:31:19,066] INFO 127.0.0.1 - - [09/Jul/2024 20:31:19] "[35m[1mGET /ticket HTTP/1.1[0m" 500 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-09 20:31:46,321] ERROR Exception on /ticket [GET] - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py L838 
+Traceback (most recent call last):
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask_openapi3\scaffold.py", line 117, in view_func
+    response = func(**func_kwargs)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\app.py", line 95, in get_ticket
+    logger.info(f"Coletando dados sobre ticekt #{ticekt_id}")
+                                                 ^^^^^^^^^
+NameError: name 'ticekt_id' is not defined
+[2024-07-09 20:31:46,327] INFO 127.0.0.1 - - [09/Jul/2024 20:31:46] "[35m[1mGET /ticket?id=1 HTTP/1.1[0m" 500 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-09 20:31:48,788] ERROR Exception on /ticket [GET] - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py L838 
+Traceback (most recent call last):
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask_openapi3\scaffold.py", line 117, in view_func
+    response = func(**func_kwargs)
+               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\app.py", line 95, in get_ticket
+    logger.info(f"Coletando dados sobre ticekt #{ticekt_id}")
+                                                 ^^^^^^^^^
+NameError: name 'ticekt_id' is not defined
+[2024-07-09 20:31:48,798] INFO 127.0.0.1 - - [09/Jul/2024 20:31:48] "[35m[1mGET /ticket HTTP/1.1[0m" 500 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-09 20:33:09,291] INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000 - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-09 20:33:09,293] INFO [33mPress CTRL+C to quit[0m - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-09 20:33:19,062] INFO Coletando dados sobre ticekt #1 - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\app.py L95  
+[2024-07-09 20:33:19,074] INFO Ticket econtrado: Ticket(id=1, title='Internet lenta', stats='Em aberto', description='A internet está muito lenta, não consigo trabalhar!') - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\app.py L107 
+[2024-07-09 20:33:19,076] INFO 127.0.0.1 - - [09/Jul/2024 20:33:19] "GET /ticket HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-09 20:33:23,566] INFO Coletando dados sobre ticekt #1 - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\app.py L95  
+[2024-07-09 20:33:23,570] INFO Ticket econtrado: Ticket(id=1, title='Internet lenta', stats='Em aberto', description='A internet está muito lenta, não consigo trabalhar!') - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\app.py L107 
+[2024-07-09 20:33:23,572] INFO 127.0.0.1 - - [09/Jul/2024 20:33:23] "GET /ticket HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-09 20:33:26,459] INFO Coletando dados sobre ticekt #1 - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\app.py L95  

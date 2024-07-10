@@ -1,0 +1,35 @@
+[2024-07-09 21:26:02,641] ERROR Exception on /ticket [PUT] - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py L838 
+Traceback (most recent call last):
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py", line 883, in full_dispatch_request
+    return self.finalize_request(rv)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py", line 902, in finalize_request
+    response = self.make_response(rv)
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py", line 1211, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, list, tuple with headers or status, Response instance, or WSGI callable, but it was a TicketViewSchema.
+[2024-07-09 21:26:02,670] INFO 127.0.0.1 - - [09/Jul/2024 21:26:02] "[35m[1mPUT /ticket HTTP/1.1[0m" 500 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-09 21:27:11,040] INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000 - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-09 21:27:11,041] INFO [33mPress CTRL+C to quit[0m - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-09 21:27:18,462] INFO Atualizando ticket #1 - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\app.py L169 
+[2024-07-09 21:27:18,484] WARNING Não foi possível atualizar o ticket. - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\app.py L194 
+[2024-07-09 21:27:18,486] INFO 127.0.0.1 - - [09/Jul/2024 21:27:18] "[31m[1mPUT /ticket HTTP/1.1[0m" 400 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-09 21:29:11,062] INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000 - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-09 21:29:11,064] INFO [33mPress CTRL+C to quit[0m - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-09 21:29:22,137] INFO Atualizando ticket #1 - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\app.py L169 
+[2024-07-09 21:29:22,226] INFO 127.0.0.1 - - [09/Jul/2024 21:29:22] "PUT /ticket HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-09 21:37:34,256] INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000 - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-09 21:37:34,258] INFO [33mPress CTRL+C to quit[0m - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-09 21:37:37,491] INFO 127.0.0.1 - - [09/Jul/2024 21:37:37] "GET /openapi/swagger HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-09 21:37:37,945] INFO 127.0.0.1 - - [09/Jul/2024 21:37:37] "[36mGET /openapi/static/css/swagger-ui.css HTTP/1.1[0m" 304 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-09 21:37:37,969] INFO 127.0.0.1 - - [09/Jul/2024 21:37:37] "[36mGET /openapi/static/js/swagger-ui-standalone-preset.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-09 21:37:37,979] INFO 127.0.0.1 - - [09/Jul/2024 21:37:37] "[36mGET /openapi/static/js/swagger-ui-bundle.js HTTP/1.1[0m" 304 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-09 21:37:38,444] INFO 127.0.0.1 - - [09/Jul/2024 21:37:38] "GET /openapi/openapi.json HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-09 21:37:38,475] INFO 127.0.0.1 - - [09/Jul/2024 21:37:38] "[36mGET /openapi/static/images/swagger.svg HTTP/1.1[0m" 304 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
