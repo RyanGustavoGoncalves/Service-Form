@@ -1,67 +1,49 @@
-[2024-07-10 17:52:51,099] ERROR Exception on /tickets [GET] - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py L838 
-Traceback (most recent call last):
-  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
-    response = self.full_dispatch_request()
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py", line 882, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask_cors\extension.py", line 178, in wrapped_function
-    return cors_after_request(app.make_response(f(*args, **kwargs)))
-                                                ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py", line 880, in full_dispatch_request
-    rv = self.dispatch_request()
-         ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py", line 865, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask_openapi3\scaffold.py", line 117, in view_func
-    response = func(**func_kwargs)
-               ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py", line 79, in get_tickets
-    tickets = session.query(Ticket).all()
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2673, in all
-    return self._iter().all()  # type: ignore
-           ^^^^^^^^^^^^
-  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2827, in _iter
-    result: Union[ScalarResult[_T], Result[_T]] = self.session.execute(
-                                                  ^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
-    return self._execute_internal(
-           ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2226, in _execute_internal
-    conn = self._connection_for_bind(bind)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2095, in _connection_for_bind
-    return trans._connection_for_bind(engine, execution_options)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<string>", line 2, in _connection_for_bind
-  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\sqlalchemy\orm\state_changes.py", line 139, in _go
-    ret_value = fn(self, *arg, **kw)
-                ^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\sqlalchemy\orm\session.py", line 1189, in _connection_for_bind
-    conn = bind.connect()
-           ^^^^^^^^^^^^^^
-  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3276, in connect
-    return self._connection_cls(self)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 146, in __init__
-    self._dbapi_connection = engine.raw_connection()
-                             ^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\sqlalchemy\engine\base.py", line 3300, in raw_connection
-    return self.pool.connect()
-           ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 449, in connect
-    return _ConnectionFairy._checkout(self)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 1263, in _checkout
-    fairy = _ConnectionRecord.checkout(pool)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\sqlalchemy\pool\base.py", line 712, in checkout
-    rec = pool._do_get()
-          ^^^^^^^^^^^^^^
-  File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 168, in _do_get
-    raise exc.TimeoutError(
-sqlalchemy.exc.TimeoutError: QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30.00 (Background on this error at: https://sqlalche.me/e/20/3o7r)
-[2024-07-10 17:52:51,150] INFO 127.0.0.1 - - [10/Jul/2024 17:52:51] "[35m[1mGET /tickets HTTP/1.1[0m" 500 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:12:46,483] INFO 127.0.0.1 - - [10/Jul/2024 18:12:46] "DELETE /ticket?id=1 HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:12:47,346] INFO 127.0.0.1 - - [10/Jul/2024 18:12:47] "OPTIONS /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:12:47,659] INFO Coletando tickets  - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L75  
+[2024-07-10 18:12:47,665] INFO 6 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L85  
+[2024-07-10 18:12:47,667] INFO 127.0.0.1 - - [10/Jul/2024 18:12:47] "GET /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:12:48,964] INFO 127.0.0.1 - - [10/Jul/2024 18:12:48] "OPTIONS /ticket?id=2 HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:12:49,280] INFO Deletando dados sobre ticket #2 - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L123 
+[2024-07-10 18:12:49,290] INFO Deletado ticket #2 - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L132 
+[2024-07-10 18:12:49,292] INFO 127.0.0.1 - - [10/Jul/2024 18:12:49] "DELETE /ticket?id=2 HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:12:50,183] INFO 127.0.0.1 - - [10/Jul/2024 18:12:50] "OPTIONS /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:12:50,450] INFO Coletando tickets  - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L75  
+[2024-07-10 18:12:50,452] INFO 5 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L85  
+[2024-07-10 18:12:50,453] INFO 127.0.0.1 - - [10/Jul/2024 18:12:50] "GET /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:12:51,866] INFO 127.0.0.1 - - [10/Jul/2024 18:12:51] "OPTIONS /ticket?id=3 HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:12:52,181] INFO Deletando dados sobre ticket #3 - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L123 
+[2024-07-10 18:12:52,189] INFO Deletado ticket #3 - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L132 
+[2024-07-10 18:12:52,190] INFO 127.0.0.1 - - [10/Jul/2024 18:12:52] "DELETE /ticket?id=3 HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:12:53,008] INFO 127.0.0.1 - - [10/Jul/2024 18:12:53] "OPTIONS /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:12:53,312] INFO Coletando tickets  - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L75  
+[2024-07-10 18:12:53,314] INFO 4 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L85  
+[2024-07-10 18:12:53,315] INFO 127.0.0.1 - - [10/Jul/2024 18:12:53] "GET /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:12:54,639] INFO 127.0.0.1 - - [10/Jul/2024 18:12:54] "OPTIONS /ticket?id=4 HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:12:54,957] INFO Deletando dados sobre ticket #4 - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L123 
+[2024-07-10 18:12:54,965] INFO Deletado ticket #4 - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L132 
+[2024-07-10 18:12:54,966] INFO 127.0.0.1 - - [10/Jul/2024 18:12:54] "DELETE /ticket?id=4 HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:12:55,815] INFO 127.0.0.1 - - [10/Jul/2024 18:12:55] "OPTIONS /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:12:56,132] INFO Coletando tickets  - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L75  
+[2024-07-10 18:12:56,134] INFO 3 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L85  
+[2024-07-10 18:12:56,135] INFO 127.0.0.1 - - [10/Jul/2024 18:12:56] "GET /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:12:57,411] INFO 127.0.0.1 - - [10/Jul/2024 18:12:57] "OPTIONS /ticket?id=5 HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:12:57,728] INFO Deletando dados sobre ticket #5 - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L123 
+[2024-07-10 18:12:57,736] INFO Deletado ticket #5 - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L132 
+[2024-07-10 18:12:57,737] INFO 127.0.0.1 - - [10/Jul/2024 18:12:57] "DELETE /ticket?id=5 HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:12:58,567] INFO 127.0.0.1 - - [10/Jul/2024 18:12:58] "OPTIONS /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:12:58,876] INFO Coletando tickets  - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L75  
+[2024-07-10 18:12:58,878] INFO 2 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L85  
+[2024-07-10 18:12:58,879] INFO 127.0.0.1 - - [10/Jul/2024 18:12:58] "GET /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:13:00,356] INFO 127.0.0.1 - - [10/Jul/2024 18:13:00] "OPTIONS /ticket?id=6 HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:13:00,623] INFO Deletando dados sobre ticket #6 - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L123 
+[2024-07-10 18:13:00,631] INFO Deletado ticket #6 - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L132 
+[2024-07-10 18:13:00,632] INFO 127.0.0.1 - - [10/Jul/2024 18:13:00] "DELETE /ticket?id=6 HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:13:01,502] INFO 127.0.0.1 - - [10/Jul/2024 18:13:01] "OPTIONS /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:13:01,808] INFO Coletando tickets  - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L75  
+[2024-07-10 18:13:01,810] INFO 1 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L85  
+[2024-07-10 18:13:01,811] INFO 127.0.0.1 - - [10/Jul/2024 18:13:01] "GET /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:13:02,918] INFO 127.0.0.1 - - [10/Jul/2024 18:13:02] "OPTIONS /ticket?id=7 HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 18:13:03,229] INFO Deletando dados sobre ticket #7 - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L123 
+[2024-07-10 18:13:03,236] INFO Deletado ticket #7 - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L132 
+[2024-07-10 18:13:03,238] INFO 127.0.0.1 - - [10/Jul/2024 18:13:03] "DELETE /ticket?id=7 HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  

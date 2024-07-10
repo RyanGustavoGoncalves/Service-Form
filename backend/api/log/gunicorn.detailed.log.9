@@ -1,4 +1,4 @@
-[2024-07-10 17:52:45,722] ERROR Exception on /busca_ticket [GET] - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py L838 
+[2024-07-10 17:52:57,479] ERROR Exception on /tickets [GET] - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py L838 
 Traceback (most recent call last):
   File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
     response = self.full_dispatch_request()
@@ -18,9 +18,9 @@ Traceback (most recent call last):
   File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask_openapi3\scaffold.py", line 117, in view_func
     response = func(**func_kwargs)
                ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py", line 153, in busca_ticket
-    tickets = session.query(Ticket).filter(Ticket.title.ilike(f"%{termo}%")).all()
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py", line 79, in get_tickets
+    tickets = session.query(Ticket).all()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2673, in all
     return self._iter().all()  # type: ignore
            ^^^^^^^^^^^^
@@ -64,4 +64,23 @@ Traceback (most recent call last):
   File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 168, in _do_get
     raise exc.TimeoutError(
 sqlalchemy.exc.TimeoutError: QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30.00 (Background on this error at: https://sqlalche.me/e/20/3o7r)
-[2024-07-10 17:52:45,756] INFO 127.0.0.1 - - [10/Jul/2024 17:52:45] "[35m[1mGET /busca_ticket?nome=t HTTP/1.1[0m" 500 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 17:52:57,509] INFO 127.0.0.1 - - [10/Jul/2024 17:52:57] "[35m[1mGET /tickets HTTP/1.1[0m" 500 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 17:53:05,123] INFO [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000 - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 17:53:05,125] INFO [33mPress CTRL+C to quit[0m - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 17:53:08,683] INFO 127.0.0.1 - - [10/Jul/2024 17:53:08] "OPTIONS /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 17:53:08,938] INFO Coletando tickets  - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L75  
+[2024-07-10 17:53:08,946] INFO 6 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L85  
+[2024-07-10 17:53:08,948] INFO 127.0.0.1 - - [10/Jul/2024 17:53:08] "GET /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 17:53:12,420] INFO Fazendo a busca por nome com o termo: Internet lenta - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L149 
+[2024-07-10 17:53:12,428] INFO 5 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L159 
+[2024-07-10 17:53:12,431] INFO 127.0.0.1 - - [10/Jul/2024 17:53:12] "GET /busca_ticket?nome=a HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 17:53:14,118] INFO Fazendo a busca por nome com o termo: Internet lenta - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L149 
+[2024-07-10 17:53:14,121] INFO 5 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L159 
+[2024-07-10 17:53:14,122] INFO 127.0.0.1 - - [10/Jul/2024 17:53:14] "GET /busca_ticket?nome= HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 17:53:15,162] INFO Fazendo a busca por nome com o termo: Internet lenta - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L149 
+[2024-07-10 17:53:15,165] INFO 5 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L159 
+[2024-07-10 17:53:15,167] INFO 127.0.0.1 - - [10/Jul/2024 17:53:15] "GET /busca_ticket?nome=a HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 17:53:16,093] INFO Fazendo a busca por nome com o termo: Internet lenta - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L149 
+[2024-07-10 17:53:16,095] INFO 5 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L159 
+[2024-07-10 17:53:16,096] INFO 127.0.0.1 - - [10/Jul/2024 17:53:16] "GET /busca_ticket?nome=ab HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  

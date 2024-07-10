@@ -76,5 +76,5 @@ class Ticket(Base):
         Returns:
             str: A string representation of the ticket.
         """
-        return f"Ticket(id={self.id}, title='{self.title}', stats='{self.stats}', cep='{cep}', endereco='{endereco}' ,description='{self.description}')"
+        return f"Ticket(id={self.id}, title='{self.title}', stats='{self.stats}', cep='{self.cep}', endereco='{self.endereco}' ,description='{self.description}')"
 

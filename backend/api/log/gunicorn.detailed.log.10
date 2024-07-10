@@ -1,18 +1,4 @@
-[2024-07-10 17:52:15,221] INFO 5 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L159 
-[2024-07-10 17:52:15,221] INFO 5 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L159 
-[2024-07-10 17:52:15,241] INFO 127.0.0.1 - - [10/Jul/2024 17:52:15] "GET /busca_ticket?nome=asdadadas HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
-[2024-07-10 17:52:15,242] INFO 127.0.0.1 - - [10/Jul/2024 17:52:15] "GET /busca_ticket?nome=asdadadasd HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
-[2024-07-10 17:52:15,706] INFO Fazendo a busca por nome com o termo: Internet lenta - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L149 
-[2024-07-10 17:52:15,787] INFO Fazendo a busca por nome com o termo: Internet lenta - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L149 
-[2024-07-10 17:52:17,068] INFO 127.0.0.1 - - [10/Jul/2024 17:52:17] "OPTIONS /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
-[2024-07-10 17:52:17,321] INFO Coletando tickets  - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L75  
-[2024-07-10 17:52:20,829] INFO 127.0.0.1 - - [10/Jul/2024 17:52:20] "OPTIONS /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
-[2024-07-10 17:52:21,082] INFO Coletando tickets  - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L75  
-[2024-07-10 17:52:24,810] INFO 127.0.0.1 - - [10/Jul/2024 17:52:24] "OPTIONS /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
-[2024-07-10 17:52:25,129] INFO Coletando tickets  - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L75  
-[2024-07-10 17:52:27,159] INFO 127.0.0.1 - - [10/Jul/2024 17:52:27] "OPTIONS /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
-[2024-07-10 17:52:27,471] INFO Coletando tickets  - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L75  
-[2024-07-10 17:52:45,235] ERROR Exception on /busca_ticket [GET] - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py L838 
+[2024-07-10 17:52:55,142] ERROR Exception on /tickets [GET] - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py L838 
 Traceback (most recent call last):
   File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask\app.py", line 1473, in wsgi_app
     response = self.full_dispatch_request()
@@ -32,9 +18,9 @@ Traceback (most recent call last):
   File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\flask_openapi3\scaffold.py", line 117, in view_func
     response = func(**func_kwargs)
                ^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py", line 153, in busca_ticket
-    tickets = session.query(Ticket).filter(Ticket.title.ilike(f"%{termo}%")).all()
-              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py", line 79, in get_tickets
+    tickets = session.query(Ticket).all()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\sqlalchemy\orm\query.py", line 2673, in all
     return self._iter().all()  # type: ignore
            ^^^^^^^^^^^^
@@ -78,4 +64,4 @@ Traceback (most recent call last):
   File "C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\sqlalchemy\pool\impl.py", line 168, in _do_get
     raise exc.TimeoutError(
 sqlalchemy.exc.TimeoutError: QueuePool limit of size 5 overflow 10 reached, connection timed out, timeout 30.00 (Background on this error at: https://sqlalche.me/e/20/3o7r)
-[2024-07-10 17:52:45,270] INFO 127.0.0.1 - - [10/Jul/2024 17:52:45] "[35m[1mGET /busca_ticket?nome= HTTP/1.1[0m" 500 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-10 17:52:55,187] INFO 127.0.0.1 - - [10/Jul/2024 17:52:55] "[35m[1mGET /tickets HTTP/1.1[0m" 500 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  

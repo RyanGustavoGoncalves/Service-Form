@@ -191,7 +191,11 @@ function adicionarTicketNaTabela(ticket) {
             <td>${ticket.endereco}</td>
             <td>${mascararCEP(ticket.cep)}</td>
             <td>                
-                <button class="btn btn-sm btn-edit" style="color:#ffffff;background:#ff6600" onclick="window.location.href='../app/editar.html?id=${ticket.id}'"><i class="fas fa-edit"></i> Editar</button>
+                <button class="btn btn-sm btn-edit" style="color:#ffffff;background:#ff6600"
+    onclick="abrirModalEditar(${ticket.id})">
+    <i class="fas fa-edit"></i> Editar
+</button>
+
                 <button class="btn btn-danger btn-sm btn-delete" onclick="excluirTicket(${ticket.id})"><i class="fas fa-trash"></i> Excluir</button>
             </td>
         </tr>
@@ -199,6 +203,137 @@ function adicionarTicketNaTabela(ticket) {
 
     Validacao.init();
 }
+
+
+// Adiciona evento de input aos campos de filtro
+$('#nome').on('input', filtrarTicketsPorNome);
+
+function abrirModalEditar(id) {
+    // Realiza a requisição GET para buscar o ticket por ID
+    fetch(`${URLS.BUSCAR_TICKET_POR_ID}?id=${encodeURIComponent(id)}`)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro ao buscar ticket');
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data) {
+                // Monta o HTML do modal de edição
+                const modalHtml = `
+                    <div class="modal fade" id="modalEditarTicket" tabindex="-1" role="dialog" aria-labelledby="modalEditarTicketLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="modalEditarTicketLabel">Editar Ticket</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="formEditarTicket">
+                                        <input type="hidden" id="editarId" name="id" value="${data.id}">
+                                        <div class="form-group">
+                                            <label for="editarNome">Título:</label>
+                                            <input type="text" class="form-control" id="editarNome" name="nome" value="${data.title}" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="editarDescricao">Descrição:</label>
+                                            <textarea class="form-control" id="editarDescricao" name="descricao" rows="3">${data.description}</textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="editarStatus">Status:</label>
+                                            <select id="editarStatus" class="form-control" name="status">
+                                                <option value="Pendente" ${data.stats === 'Pendente' ? 'selected' : ''}>Pendente</option>
+                                                <option value="Em andamento" ${data.stats === 'Em andamento' ? 'selected' : ''}>Em andamento</option>
+                                                <option value="Concluída" ${data.stats === 'Concluída' ? 'selected' : ''}>Concluída</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="editarCEP">CEP:</label>
+                                            <input type="text" class="form-control" id="editarCEP" name="cep" value="${data.cep}">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="editarEndereco">Endereço:</label>
+                                            <input type="text" class="form-control" id="editarEndereco" name="endereco" value="${data.endereco}">
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                    <button type="button" class="btn btn-primary" onclick="salvarEdicaoTicket()">Salvar Mudanças</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // Adiciona o modal ao corpo do documento
+                document.body.insertAdjacentHTML('beforeend', modalHtml);
+
+                // Abre o modal de edição
+                $('#modalEditarTicket').modal('show');
+            } else {
+                mostrarAlerta('error', 'Ticket não encontrado');
+            }
+        })
+        .catch(error => {
+            mostrarAlerta('error', error.message || 'Erro ao buscar ticket');
+        });
+}
+
+
+// Função para salvar as mudanças no ticket
+function salvarEdicaoTicket() {
+    const formData = obterFormDataEdicao();
+
+    $.ajax({
+        url: URLS.ATUALIZAR_TICKET,
+        method: 'PUT',
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function (response) {
+            Swal.fire({
+                title: "Ticket atualizado com sucesso!",
+                icon: "success"
+            });
+
+            // Fecha o modal após sucesso
+            $('#modalEditarTicket').modal('hide');
+            // Atualiza a tabela de tickets
+            buscarTickets();
+        },
+        error: function () {
+            mostrarAlerta('error', 'Erro ao atualizar ticket');
+        }
+    });
+}
+
+// Função para obter FormData com tratamento específico para edição
+function obterFormDataEdicao() {
+    const form = document.getElementById('formEditarTicket');
+    const formData = new FormData(form);
+
+    // Remover máscaras de campos específicos, se houver
+    ['cep'].forEach(campo => {
+        const valor = formData.get(campo);
+        if (valor) {
+            formData.set(campo, valor.replace(/\D/g, ''));
+        }
+    });
+
+    return formData;
+}
+
+// Função para mostrar alertas
+function mostrarAlerta(icon, title) {
+    Swal.fire({
+        icon: icon,
+        title: title,
+    });
+}
+
 
 /*
   --------------------------------------------------------------------------------------
