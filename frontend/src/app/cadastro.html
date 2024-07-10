@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Usuário</title>
+    <title>Cadastro de Task</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/cadastro.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.3/dist/sweetalert2.min.css">
@@ -13,93 +14,58 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <div class="container">
         <div class="header">
-            <h1>Cadastro de Usuário</h1>
-            <p class="description">Preencha os campos abaixo para cadastrar um novo usuário.</p>
+            <h1>Cadastro de Task</h1>
+            <p class="description">Preencha os campos abaixo para cadastrar uma nova Task.</p>
         </div>
         <form id="formCadastro">
             <div class="form-group">
-                <label for="nome">Nome:</label>
-                <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o nome completo" required>
+                <label for="title">Nome:</label>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Digite o nome da Task"
+                    required>
             </div>
             <div class="form-group">
-                <label for="cpf">CPF:</label>
-                <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Digite o CPF" required>
-                <span id="cpf-error" class="error-message"></span>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="text" class="form-control" id="email" name="email" placeholder="Digite o email" required>
+                <label for="description">Descrição:</label>
+                <textarea class="form-control" id="description" name="description" rows="3"
+                    placeholder="Digite uma descrição para a Task"></textarea>
             </div>
             <div class="form-group">
                 <label for="cep">CEP:</label>
                 <input type="text" class="form-control" id="cep" name="cep" placeholder="Digite o CEP">
             </div>
             <div class="form-group">
-                <label for="rua">Rua:</label>
-                <input type="text" class="form-control" id="rua" name="rua" placeholder="Digite a rua">
+                <label for="endereco">Endereço:</label>
+                <input type="text" class="form-control" id="endereco" name="endereco" placeholder="Digite o endereço" value="---" disabled>
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="numero">Número:</label>
-                    <input type="text" class="form-control" id="numero" name="numero" placeholder="Número da casa ou apartamento">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="complemento">Complemento:</label>
-                    <input type="text" class="form-control" id="complemento" name="complemento" placeholder="Complemento (opcional)">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="cidade">Cidade:</label>
-                    <input type="text" class="form-control" id="cidade" name="cidade" placeholder="Digite a cidade">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="estado">Estado:</label>
-                    <select id="estado" class="form-control" name="estado">
-                        <option value="">Selecione...</option>
-                        <option value="AC">Acre</option>
-                        <option value="AL">Alagoas</option>
-                        <option value="AP">Amapá</option>
-                        <option value="AM">Amazonas</option>
-                        <option value="BA">Bahia</option>
-                        <option value="CE">Ceará</option>
-                        <option value="DF">Distrito Federal</option>
-                        <option value="ES">Espírito Santo</option>
-                        <option value="GO">Goiás</option>
-                        <option value="MA">Maranhão</option>
-                        <option value="MT">Mato Grosso</option>
-                        <option value="MS">Mato Grosso do Sul</option>
-                        <option value="MG">Minas Gerais</option>
-                        <option value="PA">Pará</option>
-                        <option value="PB">Paraíba</option>
-                        <option value="PR">Paraná</option>
-                        <option value="PE">Pernambuco</option>
-                        <option value="PI">Piauí</option>
-                        <option value="RJ">Rio de Janeiro</option>
-                        <option value="RN">Rio Grande do Norte</option>
-                        <option value="RS">Rio Grande do Sul</option>
-                        <option value="RO">Rondônia</option>
-                        <option value="RR">Roraima</option>
-                        <option value="SC">Santa Catarina</option>
-                        <option value="SP">São Paulo</option>
-                        <option value="SE">Sergipe</option>
-                        <option value="TO">Tocantins</option>
-                    </select>
-                </div>
+            <div class="form-group">
+                <label for="stats">Status:</label>
+                <select id="stats" class="form-control" name="stats">
+                    <option value="Pendente">Pendente</option>
+                    <option value="Em andamento">Em andamento</option>
+                    <option value="Concluída">Concluída</option>
+                </select>
             </div>
             <div class="form-buttons">
-                <button type="button" class="btn btn-secondary btn-lg" id="btnInicio" onclick="window.location.href='../app/index.html'"><i class="fas fa-home"></i> Início</button>
-                <button type="button" class="btn btn-warning" id="btnAtualizar" onclick="atualizaUsuario()" style="display: none;">Atualizar</button>                
-                <button type="button" class="btn btn-secondary" id="btnVerUsuarios" onclick="window.location.href='../app/usuarios.html'"><i class="fas fa-list"></i> Ver Usuários Cadastrados</button>                
-                <button type="button" class="btn btn-orange" id="btnCadastrar" onclick="adiconaUsuario()"><i class="fas fa-user-plus"></i> Cadastrar</button>
+                <a href="../index.html" style="display: contents;">
+                    <button type="button" class="btn btn-secondary btn-lg" id="btnInicio"><i class="fas fa-home"></i>
+                        Início</button>
+                </a>
+                <button type="button" class="btn btn-warning" id="btnAtualizar" onclick="atualizaTask()"
+                    style="display: none;">Atualizar</button>
+                <a href="./tasks.html">
+                    <button type="button" class="btn btn-secondary" id="btnVerTasks"><i class="fas fa-list"></i> Ver
+                        todas as Tasks</button>
+                </a>
+                <button type="button" class="btn btn-orange" id="btnCadastrar" onclick="adicionaTask()"><i
+                        class="fa-solid fa-plus"></i> Cadastrar</button>
             </div>
         </form>
     </div>
-    <script type="module" src="../js/validacao.js"></script>
-    <script type="module" src="../js/cadastro.js"></script>
+    <script src="../js/cadastro.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>

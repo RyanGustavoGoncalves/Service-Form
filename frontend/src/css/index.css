@@ -1,8 +1,14 @@
-/* Estilização geral da página */
+:root {
+    --cor-primaria: #1DB954;
+    --cor-secundaria: #ffffff;
+    --cor-texto: #333;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: #f7f7f7; /* Cor de fundo clara */
-    color: #333;
+    background: var(--cor-secundaria);
+    /* Fundo branco */
+    color: var(--cor-texto);
     margin: 0;
     padding: 0;
     display: flex;
@@ -18,7 +24,8 @@ body {
     max-width: 800px;
     margin: 20px;
     padding: 2em;
-    background-color: #ffffff; /* Cor branca para o fundo dos cards */
+    background-color: var(--cor-secundaria);
+    /* Usando a cor secundária */
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
@@ -32,15 +39,16 @@ header {
 h1 {
     font-size: 2.8em;
     margin-bottom: 0.5em;
-    color: #ff6600; /* Cor laranja */
+    color: var(--cor-primaria);
+    /* Usando a cor primária */
     font-weight: 700;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra do texto */
 }
 
 /* Descrição do título */
 .description {
     font-size: 1.2em;
-    color: #666; /* Texto em cinza mais escuro */
+    color: #666;
+    /* Texto em cinza mais escuro */
     margin-bottom: 2em;
 }
 
@@ -54,16 +62,23 @@ h1 {
 
 /* Estilização dos cards */
 .card {
-    background: #fff; /* Cor de fundo branca */
+    display: grid;
+    place-items: center;
+    background: #fff;
+    /* Cor de fundo branca */
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 1.5em;
-    width: 280px; /* Aumentei a largura dos cards */
-    min-height: 220px; /* Aumentei a altura mínima dos cards */
+    width: 280px;
+    /* Aumentei a largura dos cards */
+    min-height: 220px;
+    /* Aumentei a altura mínima dos cards */
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
-    color: #333; /* Cor do texto */
-    border: 2px solid #ff6600; /* Borda laranja */
+    color: var(--cor-texto);
+    /* Utilizando a cor do texto padrão */
+    border: 2px solid var(--cor-primaria);
+    /* Utilizando a cor primária para a borda */
 }
 
 /* Efeito de hover para os cards */
@@ -74,14 +89,16 @@ h1 {
 
 /* Ícones dos cards */
 .card i {
-    color: #ff6600;    
+    color: var(--cor-primaria);
+    /* Utilizando a cor primária para os ícones */
 }
 
 /* Título dos cards */
 .card h2 {
     font-size: 1.5em;
     margin-bottom: 0.5em;
-    color: #333; /* Cor escura para o título */
+    color: var(--cor-texto);
+    /* Utilizando a cor do texto padrão */
     font-weight: 600;
 }
 
@@ -89,25 +106,31 @@ h1 {
 .card p {
     font-size: 1em;
     margin-bottom: 2em;
-    color: #666; /* Cor do texto */
+    color: #666;
+    /* Cor do texto */
 }
 
 /* Botões dos cards */
 .card .btn {
-    background-color: #ff6600; /* Cor laranja para o botão */
-    color: #fff; /* Cor do texto */
+    background-color: var(--cor-primaria);
+    /* Utilizando a cor primária para o botão */
+    color: #fff;
+    /* Cor do texto */
     padding: 0.75em 1.5em;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 600;
     transition: background-color 0.3s, color 0.3s;
-    border: 2px solid #ff6600; /* Borda laranja para o botão */    
+    border: 2px solid var(--cor-primaria);
+    /* Borda na cor primária */
 }
 
 /* Efeito de hover para o botão */
 .card .btn:hover {
-    background-color: #e55a00; /* Cor laranja mais escura */
-    color: #fff; /* Cor do texto */
+    background-color: #1db954c4;
+    /* Cor laranja mais escura para o hover */
+    color: #fff;
+    /* Cor do texto */
 }
 
 .card .btn:focus {
