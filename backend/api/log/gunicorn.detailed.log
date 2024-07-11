@@ -1,34 +1,30 @@
-[2024-07-10 18:41:35,387] INFO 127.0.0.1 - - [10/Jul/2024 18:41:35] "DELETE /ticket?id=1 HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
-[2024-07-10 18:41:36,183] INFO 127.0.0.1 - - [10/Jul/2024 18:41:36] "OPTIONS /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
-[2024-07-10 18:41:36,496] INFO Coletando tickets  - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L75  
-[2024-07-10 18:41:36,500] INFO 127.0.0.1 - - [10/Jul/2024 18:41:36] "GET /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
-[2024-07-10 18:41:40,519] INFO 127.0.0.1 - - [10/Jul/2024 18:41:40] "OPTIONS /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
-[2024-07-10 18:41:40,829] INFO Coletando tickets  - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L75  
-[2024-07-10 18:41:40,850] INFO 127.0.0.1 - - [10/Jul/2024 18:41:40] "GET /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
-[2024-07-10 18:41:50,160] INFO Adicionando Ticket de nome: 'aaaaaaaaaaa' - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L43  
-[2024-07-10 18:41:50,209] INFO 127.0.0.1 - - [10/Jul/2024 18:41:50] "POST /ticket HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
-[2024-07-10 18:41:52,483] INFO 127.0.0.1 - - [10/Jul/2024 18:41:52] "OPTIONS /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
-[2024-07-10 18:41:52,803] INFO Coletando tickets  - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L75  
-[2024-07-10 18:41:52,805] INFO 1 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L85  
-[2024-07-10 18:41:52,806] INFO 127.0.0.1 - - [10/Jul/2024 18:41:52] "GET /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
-[2024-07-10 18:41:53,607] INFO Coletando dados sobre ticket #1 - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L98  
-[2024-07-10 18:41:53,609] INFO Ticket encontrado: Ticket(id=1, title='aaaaaaaaaaa', stats='Em andamento', cep='12213440', endereco='Rua Almenara, Vila Paiva, São José dos Campos - SP' ,description='aaaaaaaaaaaa') - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L110 
-[2024-07-10 18:41:53,611] INFO 127.0.0.1 - - [10/Jul/2024 18:41:53] "GET /ticket?id=1 HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
-[2024-07-10 18:42:04,583] INFO 127.0.0.1 - - [10/Jul/2024 18:42:04] "OPTIONS /ticket HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
-[2024-07-10 18:42:04,965] INFO 127.0.0.1 - - [10/Jul/2024 18:42:04] "[31m[1mPUT /ticket HTTP/1.1[0m" 422 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
-[2024-07-10 18:42:27,082] INFO Coletando dados sobre ticket #1 - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L98  
-[2024-07-10 18:42:27,084] INFO Ticket encontrado: Ticket(id=1, title='aaaaaaaaaaa', stats='Em andamento', cep='12213440', endereco='Rua Almenara, Vila Paiva, São José dos Campos - SP' ,description='aaaaaaaaaaaa') - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L110 
-[2024-07-10 18:42:27,086] INFO 127.0.0.1 - - [10/Jul/2024 18:42:27] "GET /ticket HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
-[2024-07-10 18:42:27,255] INFO 127.0.0.1 - - [10/Jul/2024 18:42:27] "[33mGET /favicon.ico HTTP/1.1[0m" 404 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
-[2024-07-10 18:42:28,947] INFO Coletando dados sobre ticket #1 - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L98  
-[2024-07-10 18:42:28,950] INFO Ticket encontrado: Ticket(id=1, title='aaaaaaaaaaa', stats='Em andamento', cep='12213440', endereco='Rua Almenara, Vila Paiva, São José dos Campos - SP' ,description='aaaaaaaaaaaa') - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L110 
-[2024-07-10 18:42:28,951] INFO 127.0.0.1 - - [10/Jul/2024 18:42:28] "GET /ticket HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
-[2024-07-10 18:42:32,483] INFO 127.0.0.1 - - [10/Jul/2024 18:42:32] "OPTIONS /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
-[2024-07-10 18:42:32,750] INFO Coletando tickets  - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L75  
-[2024-07-10 18:42:32,752] INFO 1 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L85  
-[2024-07-10 18:42:32,754] INFO 127.0.0.1 - - [10/Jul/2024 18:42:32] "GET /tickets HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
-[2024-07-10 18:42:33,703] INFO Coletando dados sobre ticket #1 - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L98  
-[2024-07-10 18:42:33,706] INFO Ticket encontrado: Ticket(id=1, title='aaaaaaaaaaa', stats='Em andamento', cep='12213440', endereco='Rua Almenara, Vila Paiva, São José dos Campos - SP' ,description='aaaaaaaaaaaa') - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L110 
-[2024-07-10 18:42:33,708] INFO 127.0.0.1 - - [10/Jul/2024 18:42:33] "GET /ticket?id=1 HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
-[2024-07-10 18:42:37,901] INFO 127.0.0.1 - - [10/Jul/2024 18:42:37] "OPTIONS /ticket HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
-[2024-07-10 18:42:38,171] INFO 127.0.0.1 - - [10/Jul/2024 18:42:38] "[31m[1mPUT /ticket HTTP/1.1[0m" 422 - - call_trace=C:\Users\Ryzen 7\Desktop\desenvolvimento-full-stack\desenvolvimento-full-stack-avancado\rest_api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-11 17:57:14,610] INFO Fazendo a busca por nome com o termo: tes - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L149 
+[2024-07-11 17:57:14,626] INFO 2 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L159 
+[2024-07-11 17:57:14,627] INFO 127.0.0.1 - - [11/Jul/2024 17:57:14] "GET /busca_ticket?termo=tes HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-11 17:57:14,718] INFO Fazendo a busca por nome com o termo: test - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L149 
+[2024-07-11 17:57:14,724] INFO 2 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L159 
+[2024-07-11 17:57:14,726] INFO 127.0.0.1 - - [11/Jul/2024 17:57:14] "GET /busca_ticket?termo=test HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-11 17:57:14,749] INFO Fazendo a busca por nome com o termo: teste - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L149 
+[2024-07-11 17:57:14,752] INFO 2 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L159 
+[2024-07-11 17:57:14,754] INFO 127.0.0.1 - - [11/Jul/2024 17:57:14] "GET /busca_ticket?termo=teste HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-11 17:57:14,799] INFO Fazendo a busca por nome com o termo: t - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L149 
+[2024-07-11 17:57:14,801] INFO 2 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L159 
+[2024-07-11 17:57:14,802] INFO 127.0.0.1 - - [11/Jul/2024 17:57:14] "GET /busca_ticket?termo=t HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-11 17:57:14,807] INFO Fazendo a busca por nome com o termo: te - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L149 
+[2024-07-11 17:57:14,810] INFO Fazendo a busca por nome com o termo: tes - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L149 
+[2024-07-11 17:57:14,814] INFO 2 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L159 
+[2024-07-11 17:57:14,816] INFO 2 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L159 
+[2024-07-11 17:57:14,817] INFO 127.0.0.1 - - [11/Jul/2024 17:57:14] "GET /busca_ticket?termo=te HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-11 17:57:14,818] INFO 127.0.0.1 - - [11/Jul/2024 17:57:14] "GET /busca_ticket?termo=tes HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-11 17:57:14,935] INFO Fazendo a busca por nome com o termo: test - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L149 
+[2024-07-11 17:57:14,938] INFO 2 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L159 
+[2024-07-11 17:57:14,939] INFO 127.0.0.1 - - [11/Jul/2024 17:57:14] "GET /busca_ticket?termo=test HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-11 17:57:15,045] INFO Fazendo a busca por nome com o termo: teste - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L149 
+[2024-07-11 17:57:15,048] INFO 2 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L159 
+[2024-07-11 17:57:15,049] INFO 127.0.0.1 - - [11/Jul/2024 17:57:15] "GET /busca_ticket?termo=teste HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-11 17:57:16,215] INFO Fazendo a busca por nome com o termo:  - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L149 
+[2024-07-11 17:57:16,217] INFO 3 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L159 
+[2024-07-11 17:57:16,219] INFO 127.0.0.1 - - [11/Jul/2024 17:57:16] "GET /busca_ticket?termo= HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\venv\Lib\site-packages\werkzeug\_internal.py L97  
+[2024-07-11 17:57:16,531] INFO Fazendo a busca por nome com o termo:  - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L149 
+[2024-07-11 17:57:16,533] INFO 3 tickets encontrados - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\app.py L159 
+[2024-07-11 17:57:16,534] INFO 127.0.0.1 - - [11/Jul/2024 17:57:16] "GET /busca_ticket?termo= HTTP/1.1" 200 - - call_trace=C:\Users\Ryzen 7\Desktop\Service-Form\backend\api\venv\Lib\site-packages\werkzeug\_internal.py L97  

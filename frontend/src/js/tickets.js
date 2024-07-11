@@ -132,7 +132,7 @@ window.excluirTicket = function (id) {
 function filtrarTicketsPorNome() {
     const nomeFiltro = $('#nome').val().toLowerCase();
     $.ajax({
-        url: `${URLS.BUSCAR_TICKET_POR_NOME}?nome=${encodeURIComponent(nomeFiltro)}`,
+        url: `${URLS.BUSCAR_TICKET_POR_NOME}?termo=${encodeURIComponent(nomeFiltro)}`,
         type: 'GET',
         success: function (data) {
             limparTabelaTickets();
@@ -151,30 +151,33 @@ function filtrarTicketsPorNome() {
     });
 }
 
-function filtrarTicketsPorId(id) {
+
+
+
+function filtrarTicketsPorId() {
+    const ticketFiltro = $('#ticket').val().toLowerCase();
+ 
     $.ajax({
-        url: `${URLS.BUSCAR_TICKET_POR_ID}?id=${encodeURIComponent(id)}`,
+        url: `${URLS.BUSCAR_TICKET_POR_ID}?id=${encodeURIComponent(ticketFiltro)}`,
         type: 'GET',
         success: function (data) {
             limparTabelaTickets();
-            if (data && Array.isArray(data.tickets)) { // Verifica se data.tickets é um array
-                data.tickets.forEach(ticket => {
-                    adicionarTicketNaTabela(ticket);
-                });
+            if (data && data.id) { // Verifica se data.tickets é um array
+                adicionarTicketNaTabela(data);
             } else {
                 $('#ticketsTableBody').append('<tr><td colspan="10">Ticket não encontrado</td></tr>');
+                
             }
         },
         error: function () {
-            limparTabelaTickets();
-            $('#ticketsTableBody').append('<tr><td colspan="10">Erro ao buscar ticket</td></tr>');
+            $('#ticketsTableBody')//.append('<tr><td colspan="10">Erro ao buscar tickets</td></tr>');
         }
     });
 }
 
 // Adiciona evento de input aos campos de filtro
 $('#nome').on('input', filtrarTicketsPorNome);
-
+$('#ticket').on('input', filtrarTicketsPorId);
 /*
   --------------------------------------------------------------------------------------
   Função que adiciona tickets na Tabela
@@ -182,9 +185,9 @@ $('#nome').on('input', filtrarTicketsPorNome);
 */
 
 function adicionarTicketNaTabela(ticket) {
-    console.log("ticket", ticket);
     $('#ticketsTableBody').append(`
         <tr>
+            <td class="nome-column">${ticket.id}</td>
             <td class="nome-column">${ticket.title}</td>
             <td>${ticket.stats}</td>
             <td class="email-column">${ticket.description}</td>
@@ -207,6 +210,7 @@ function adicionarTicketNaTabela(ticket) {
 
 // Adiciona evento de input aos campos de filtro
 $('#nome').on('input', filtrarTicketsPorNome);
+$('#ticket').on('input', filtrarTicketsPorId);
 
 function abrirModalEditar(id) {
     // Realiza a requisição GET para buscar o ticket por ID
@@ -286,6 +290,7 @@ function abrirModalEditar(id) {
 // Função para salvar as mudanças no ticket
 function salvarEdicaoTicket() {
     const formData = obterFormDataEdicao();
+ 
 
     $.ajax({
         url: URLS.ATUALIZAR_TICKET,
@@ -312,16 +317,14 @@ function salvarEdicaoTicket() {
 
 // Função para obter FormData com tratamento específico para edição
 function obterFormDataEdicao() {
-    const form = document.getElementById('formEditarTicket');
-    const formData = new FormData(form);
+    const formData = new FormData();
 
-    // Remover máscaras de campos específicos, se houver
-    ['cep'].forEach(campo => {
-        const valor = formData.get(campo);
-        if (valor) {
-            formData.set(campo, valor.replace(/\D/g, ''));
-        }
-    });
+    formData.append('id', document.getElementById('editarId').value);
+    formData.append('title', document.getElementById('editarNome').value);
+    formData.append('description', document.getElementById('editarDescricao').value);
+    formData.append('stats', document.getElementById('editarStatus').value);
+    formData.append('cep', document.getElementById('editarCEP').value);
+    formData.append('endereco', document.getElementById('editarEndereco').value);
 
     return formData;
 }
